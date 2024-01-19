@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Shortcut</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: cyan;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50%;
+            background-color: cyan;
+            color: black;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sub-button {
+            display: none;
+            margin-top: 10px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .button.active {
+            transform: scale(1.2);
+            animation: explode 0.5s;
+        }
+
+        .button.active + .sub-button {
+            display: block;
+            opacity: 1;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .glowing-text {
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            border-radius: 50px;
+            left: 20%;
+            background-color: rgba(0, 255, 255, 0.2);
+            color: cyan;
+            padding: 5px 10px;
+            animation: glowing 2s infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 5px cyan;
+            }
+            50% {
+                box-shadow: 0 0 20px cyan;
+            }
+            100% {
+                box-shadow: 0 0 5px cyan;
+            }
+        }
+    </style>
+    <script>
+        function toggleSubButtons(button) {
+            button.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Converter Shortcut</h1>
+        <a href="#" class="button" onclick="toggleSubButtons(this)">Pencet iNi</a>
+        <div class="sub-button">
+            <a href="https://www.freeconvert.com/jpg-to-png" class="button">JPG TO PNG</a>
+            <a href="https://cloudconvert.com/mp4-to-mp3" class="button">MP4 TO MP3</a>
+            <a href="https://qrgeneratorzo.github.io/" class="button">TEXT TO QRCODE</a>
+        </div>
+        <p class="glowing-text">Support By : ZottieDev & Mulyo Design</p>
+    </div>
+</body>
+</html>
